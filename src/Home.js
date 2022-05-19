@@ -1,19 +1,19 @@
 import NavBar from './Components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
+import './css/Home.css'
+const Home = () => {
+ let saludo="Hola bienvenido a mi E-commerce"
+  return (
+    <>
+      <div className="Home">
+        <NavBar ></NavBar>
+      </div>
+      <div className='saludo'>
+      <ItemListContainer greeting={saludo}/>
+      </div>
+    </>
 
+  );
+}
 
-function Home () {
-    return (
-      <>
-  
-        <div className="Home">
-          <NavBar ></NavBar>
-        </div>
-        
-  
-  
-      </>
-  
-    );
-  }
-
-  export default Home;
+export default Home;

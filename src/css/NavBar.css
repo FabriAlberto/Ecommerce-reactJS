@@ -1,0 +1,15 @@
+.nav-item{
+    margin-right: 10px;
+}
+
+.bi-cart2{
+    font-size: 1.5rem;
+    color: #377DD3;
+}
+
+.navbar-brand{
+    color: #377DD3;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
