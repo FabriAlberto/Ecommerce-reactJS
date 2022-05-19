@@ -1,7 +1,6 @@
 import NavBar from './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
 import './css/Home.css'
-import ItemCount from './Components/ItemCount';
 const Home = () => {
  let saludo="Hola bienvenido a mi E-commerce"
   return (
@@ -9,10 +8,10 @@ const Home = () => {
       <div className="Home">
         <NavBar ></NavBar>
       </div>
-      <div className='saludo'>
+      <div className='ItemList'>
       <ItemListContainer greeting={saludo}/>
       </div>
-      <ItemCount/>
+     
 
     </>
 

@@ -16,6 +16,7 @@ const ItemCount = () => {
                     <button onClick={restar} className="button__contador"> - </button>
                 </div>
                 <button onClick={onAdd} className="button__add">Add to carrito</button>
+                {/* No entendi bien si tennia que usar o no onAdd igualmente lo puse con una funcion de alert */}
             </div>
         </>
     );
