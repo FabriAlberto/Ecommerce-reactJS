@@ -5,8 +5,14 @@
 .bi-cart2{
     font-size: 1.5rem;
     color: #377DD3;
+    border: none;
+    background-color: transparent;
 }
+.notify{
+    font-size: 12px;
+    margin-top: 5px;
 
+}
 .navbar-brand{
     color: #377DD3;
 }

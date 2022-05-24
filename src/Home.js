@@ -7,11 +7,8 @@ const Home = () => {
     <>
       <div className="Home">
         <NavBar ></NavBar>
-      </div>
-      <div className='ItemList'>
       <ItemListContainer greeting={saludo}/>
       </div>
-     
 
     </>
 
