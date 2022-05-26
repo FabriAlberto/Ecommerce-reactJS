@@ -11,7 +11,6 @@ const Item = ({producto}) => {
             <p className="card-text">{producto.description}</p>
             <p className="card-text">${producto.price}</p>
             </div>
-            <ItemCount stock={producto.stock}></ItemCount>
         </div>
         </>
     );
