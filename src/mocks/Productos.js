@@ -9,7 +9,7 @@ const productos = [
     { id: 8, name: "NIKE WAFFLE ONE", description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",category:"zapatillas", gende: "mujer", price: 22000, img: "https://woker.vteximg.com.br/arquivos/ids/248080-600-600/4DC2533-002-1.jpg?v=637733531956530000",stock:1, },
 
   ]
-
+  
   export const getData = new Promise((resolve, reject) => {
     let cond = true;
     setTimeout(()=>{

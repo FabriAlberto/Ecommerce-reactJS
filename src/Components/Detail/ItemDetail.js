@@ -1,6 +1,6 @@
 import React from 'react'
-import ItemCount from '../ItemCount'
-const ItemDetail = ({ Item }) => {
+import ItemCount from '../items/ItemCount'
+const ItemDetail = ({Item }) => {
     const { img, name, description, price, stock } = Item
     return (
         <>
