@@ -1,3 +1,6 @@
+*{
+    font-family:'Montserrat', sans-serif ;
+}
 .saludo{
     text-align: center;
     font-size: 1.5rem;
@@ -41,3 +44,37 @@
  
  /* ITEMS END */
  
+/* items car */
+.continue__shoping{
+    background-color: transparent;
+    border: 2px solid #377DD3;
+    margin: 30px 0px;
+}
+.continue__shoping:hover{
+
+
+     background-color: #000;
+     border: 2px solid #000;
+     color: #fff;
+     
+}
+.bi-trash3-fill {
+    background-color: transparent;
+    border:none;
+}
+.delete{
+    background-color: transparent;
+    border:none;
+}
+.delete:hover{
+    color: red;
+}
+
+
+/* cart */
+.btnAmount{
+    border: none;
+    background-color: #377DD3;
+    font-size: 1.5rem;
+    margin: 5px;
+}

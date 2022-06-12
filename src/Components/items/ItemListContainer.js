@@ -11,7 +11,7 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     setLoading(true)
-    
+  
     setTimeout(()=>{
       getData
       .then((res) => {

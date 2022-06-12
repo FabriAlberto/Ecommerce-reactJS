@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCount from '../items/ItemCount'
+import ItemCount from './ItemCount'
 import { useContext ,useState} from 'react';
 import { CartContext } from "../Cart/CartContext";
 import ItemGoToCart from './ItemGoToCart';
@@ -7,11 +7,17 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({Item}) => {
     const { img, name, description, price, stock } = Item
     const[cont, setCont] = useState(1);
-    const[OnAdd, setOnAdd]= useState(false);
+    const[Buy, setBuy]= useState(false);
     const add = useContext(CartContext);
-    const onAdd=()=>{ cont>0? (alert( `Elementos agregados ${cont} `,add.addToCar(Item) ,setOnAdd(true)))
-                            
-    : alert("no agrego elementos");
+
+    const onAdd=()=>{ cont>0? 
+    (
+    alert( `Elementos agregados ${cont} `,
+     add.addToCar(Item,cont) ,
+     setBuy(true))
+    )                      
+    : 
+    alert("no agrego elementos");
 }
 
    
@@ -26,12 +32,13 @@ const ItemDetail = ({Item}) => {
                     <p>{description}</p>
                     <p>${price}</p>
                     {
-                    OnAdd===false?<ItemCount stock={stock} Item={Item} onAdd={onAdd} cont={cont} setCont={setCont}/> : <Link to={"/cart"} > <ItemGoToCart/></Link>
+                    Buy===false?<ItemCount stock={stock} Item={Item} onAdd={onAdd} cont={cont} setCont={setCont}/> 
+                    : <Link to={"/cart"}> <ItemGoToCart/></Link>
                     }
                 </div>
             </div>
             <div>
-                <p> pares disponibles {stock}</p>
+                <p> pares disponibles: {stock}</p>
             </div>
         </>
     )
