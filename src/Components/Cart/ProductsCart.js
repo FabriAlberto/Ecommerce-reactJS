@@ -1,40 +1,42 @@
-import React, { useContext }  from 'react'
+import React, { useContext } from 'react'
 import { CartContext } from './CartContext'
-
+import Order from './Order'
 import ProductData from './ProductData'
 
 const ProductsCart = ({ product }) => {
-   
-   const cle=useContext(CartContext)
- 
+
+  const cle = useContext(CartContext)
+
   return (
     <>
-       <div className='d-flex '>
-       
+      <div className='cart d-flex '>
+        <div className='d-flex' style={{ width: '70%', height:'0px' }}>
+          <table className="table" style={{ width: '100%' }}>
+            <thead className>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col"> </th>
+                <th scope="col">Price</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {product.map(elem =>
 
-      <table className="table" style={{ width: '70%' }}> 
-        <thead className>
-          <tr>
-            <th scope="col">Product</th>
-            <th scope="col"> </th>
-            <th scope="col">Price</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          {product.map(elem =>
+                <ProductData data={elem}></ProductData>
 
-            <ProductData data={elem}></ProductData>
-            
-          )}
-        </tbody>
-        
+              )}
+            </tbody>
 
-      </table>
-      <button onClick={cle.clear} style={{height:'30px'}}>DELETE ALL</button>
-      </div> 
 
+          </table>
+          <button className="continue__shoping all" onClick={cle.clear} style={{ height: '30px', }}>DELETE ALL</button>
+        </div>
+  {      <div className='orderContainer'>
+        <Order style= {{width:'30%'}}> </Order>
+        </div>}
+      </div>
     </>
   )
 }

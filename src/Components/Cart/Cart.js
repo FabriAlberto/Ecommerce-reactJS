@@ -2,10 +2,10 @@ import { useContext } from "react"
 import { CartContext } from "./CartContext"
 import ProductsCart from "./ProductsCart";
 import { Link } from "react-router-dom";
+
 const Cart = () => {
 
   const test = useContext(CartContext);
- 
   return (
     <>
       <div className="container">
@@ -15,7 +15,7 @@ const Cart = () => {
           test.cartList.length === 0 ?
            <p>You cart is empty</p>
             :  
-            <ProductsCart  product={test.cartList}></ProductsCart>
+            (<ProductsCart  product={test.cartList}></ProductsCart> )
   
         }
       </div>
