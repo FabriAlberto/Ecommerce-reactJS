@@ -8,11 +8,10 @@ const Item = ({producto}) => {
         <div className="card" style={{width:'20rem', margin:'15px'}}>
             <Link to={`/item/${producto.id}`} style={{textDecoration:'none'}} >
             <img src={producto.img} className="card-img-top" alt={producto.name} style={{width:'100%'}}/>
-            <div className='content'><p><i class="bi bi-info-circle-fill"></i>View details</p></div>
+            <div className='content'><p><i className="bi bi-info-circle-fill"></i>View details</p></div>
             </Link>
             <div className="card-body">
             <p className="card-text">{producto.name}</p>
-            <p className="card-text">{producto.description}</p>
             <p className="card-text">${producto.price}</p>
             </div>
         </div>

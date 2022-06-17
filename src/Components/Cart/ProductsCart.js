@@ -12,7 +12,7 @@ const ProductsCart = ({ product }) => {
       <div className='cart d-flex '>
         <div className='d-flex' style={{ width: '70%', height:'0px' }}>
           <table className="table" style={{ width: '100%' }}>
-            <thead className>
+            <thead >
               <tr>
                 <th scope="col">Product</th>
                 <th scope="col"> </th>
@@ -24,7 +24,7 @@ const ProductsCart = ({ product }) => {
             <tbody>
               {product.map(elem =>
 
-                <ProductData data={elem}></ProductData>
+                <ProductData key={elem.id} data={elem}></ProductData>
 
               )}
             </tbody>

@@ -13,7 +13,7 @@ const ItemDetail = ({Item}) => {
     const onAdd=()=>{ cont>0? 
     (
     alert( `Elementos agregados ${cont} `,
-    add.addToCar(Item,cont) ,
+    add.addToCar(Item,cont),
     setBuy(true))
     )                      
     : 

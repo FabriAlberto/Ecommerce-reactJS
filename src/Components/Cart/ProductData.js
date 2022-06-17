@@ -13,7 +13,7 @@ const ProductData = ({data}) => {
               <td>${data.price}</td>
               <td> <button className="btnAmount" onClick={()=>del.decrement(data.id, data.stock)} > - </button > {data.cantidad} <button onClick={()=>del.increment(data.id, data.stock)}   className="btnAmount">+</button> </td>
               <td> {data.price * data.cantidad} </td>
-              <button onClick={()=> del.removeItem(data.id)} className='delete'><i class="bi bi-trash3-fill "></i></button>
+              <td><button onClick={()=> del.removeItem(data.id)} className='delete'><i className="bi bi-trash3-fill "></i></button></td>
      </tr>
   )
 }
