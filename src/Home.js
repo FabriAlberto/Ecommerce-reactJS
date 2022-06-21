@@ -6,26 +6,28 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 /* import SearchContainer from './Components/Search/SearchContainer'; */
 import Cart from './Components/Cart/Cart';
 import CartContextProvider from './Components/Cart/CartContext';
+
 const Home = () => {
-  let saludo = "Hola bienvenido a mi E-commerce"
+ 
 
   return (
     <>
+   
       <CartContextProvider>
         <div className="Home">
           <BrowserRouter>
             <NavBar></NavBar>
             {/* <SearchContainer></SearchContainer> */}
             <Routes>
-              <Route path="/" element={<ItemListContainer greeting={saludo} />} />
-              <Route path="/category/:categoria" element={<ItemListContainer greeting={saludo} />} />
+              <Route path="/" element={<ItemListContainer  />} />
+              <Route path="/category/:categoria" element={<ItemListContainer />} />
               <Route path="/item/:id" element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />} />
             </Routes>
           </BrowserRouter>
         </div>
       </CartContextProvider>
-
+  
     </>
 
   );
