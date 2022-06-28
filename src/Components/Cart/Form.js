@@ -1,10 +1,10 @@
-import React, { Component, useContext } from 'react'
+import React, {  useContext } from 'react'
 import { useState } from 'react'
 import { CartContext } from './CartContext'
 import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
 import db from "../../mocks/FirebaseConfig"
 import { toast } from 'react-hot-toast';
-const Form = ({setComprar}) => {
+const Form = ({ setComprar }) => {
     let tot = useContext(CartContext)
 
     const [form, setForm] = useState({
@@ -14,80 +14,83 @@ const Form = ({setComprar}) => {
         cel: ''
     })
     const handleInputChange = (e) => {
-        
-      setForm({
-        ...form,
-        [e.target.name]:e.target.value
-       })
+
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        })
     }
-    const sendData=(e)=>{
+    const sendData = (e) => {
         e.preventDefault();
         console.log(form)
         generateOrder();
     }
-   
-    
-    
-        const generateOrder = async () => {
-            let itemsCarOrder = tot.cartList.map(item => ({
-                id: item.id,
-                title: item.name,
-                priceForUniti: item.price,
-                cantidad: item.cantidad,
-                priceTotal: item.price * item.cantidad,
-            }));
-    
-            let order = {
-                buyer: {
-                    name: form.name,
-                    surname:form.surname,
-                    email:form.email,
-                    phone: form.cel
-                },
-                total: tot.calcTotal() - tot.calcDescuento(),
-                items: itemsCarOrder,
-                date: serverTimestamp()
-            };
-         
-    
-            const createOrderInFS = async () => {
-                const newOrderRef = doc(collection(db, "orders"));
-                await setDoc(newOrderRef, order);
-                return newOrderRef;
-            }
-    
-            toast.promise( createOrderInFS(),
-                {
-                    loading: 'Loading',
-                    success: (data) => `Tu orden ha sido creada ! ID: ${data.id}`,
-                    error: (err) => `This just happened: ${err.toString()}`,
-    
-                },
-            );
-    
-            setComprar(false)
-            setTimeout(() => {
-                 /* function que ingresa al firestore y desincrementa el stock del producto comprado */
-                tot.cartList.forEach(async(element) => {
-                    const itemDB = doc(db, "products", element.id)
-                    await updateDoc(itemDB, {
-                        stock: increment(-element.cantidad)
-                    });
-                })
-               /*  borra el carrito  */
-               tot.clear()
-            }, 3000)
-            
+
+
+
+    const generateOrder = async () => {
+        let itemsCarOrder = tot.cartList.map(item => ({
+            id: item.id,
+            title: item.name,
+            priceForUniti: item.price,
+            cantidad: item.cantidad,
+            priceTotal: item.price * item.cantidad,
+        }));
+
+        let order = {
+            buyer: {
+                name: form.name,
+                surname: form.surname,
+                email: form.email,
+                phone: form.cel
+            },
+            total: tot.calcTotal() - tot.calcDescuento(),
+            items: itemsCarOrder,
+            date: serverTimestamp()
+        };
+
+
+        const createOrderInFS = async () => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
         }
-        
+
+        toast.promise(createOrderInFS(),
+            {
+                loading: 'Loading',
+                success: (data) => `Tu orden ha sido creada ! ID: ${data.id}`,
+                error: (err) => `This just happened: ${err.toString()}`,
+
+            },
+        );
+
+       
+        setTimeout(() => {
+            /* function que ingresa al firestore y desincrementa el stock del producto comprado */
+            tot.cartList.forEach(async (element) => {
+                const itemDB = doc(db, "products", element.id)
+                await updateDoc(itemDB, {
+                    stock: increment(-element.cantidad)
+                });
+            })
+            /*  borra el carrito  */
+            tot.clear()
+        }, 3000)
+        setComprar(false)
+
+    }
+
     return (
 
         <>
-            <div className=' container d-flex justify-content-center'>
+           <button onClick={()=>setComprar(false)} > Volver al car </button>
+            <div className=' container d-flex justify-content-center bg-dark'>
                 <form onSubmit={sendData}
-                className=" forms col-md-12 d-flex flex-column  justify-content-center align-items-center " >
+                    className=" forms col-md-12 d-flex flex-column  justify-content-center align-items-center " >
 
                     <div className='col-md-5'>
+                        <label htmlFor='name'>Name:</label>
                         <input
                             type="text"
                             name='name'
@@ -97,6 +100,7 @@ const Form = ({setComprar}) => {
                         />
                     </div>
                     <div className='col-md-5'>
+                    <label htmlFor='surname'>Surname:</label>
                         <input
                             type="text"
                             name='surname'
@@ -106,16 +110,18 @@ const Form = ({setComprar}) => {
                         />
                     </div>
                     <div className='col-md-5'>
+                    <label htmlFor='email'>Email:</label>
                         <input
                             type="email"
                             name='email'
-                            placeholder=' write you email'
+                            placeholder='email@email.com'
                             className='form-control my-2'
                             onChange={handleInputChange}
                         />
                     </div>
 
                     <div className='col-md-5'>
+                    <label htmlFor='cel'>cel:</label>
                         <input
                             type="number"
                             name='cel'
@@ -125,16 +131,16 @@ const Form = ({setComprar}) => {
                         />
                     </div>
                     <div>
-                       Precio Total de compra: ${tot.calcTotal() - tot.calcDescuento()}
+                        Precio Total de compra: ${tot.calcTotal() - tot.calcDescuento()}
 
                     </div>
                     <div className='col-md-5'>
-                        <button className='btn btn-primary'  type='submit'>END compra</button>
+                        <button className='btn btn-primary' type='submit' style={{width:'100%'}}>Finalizar Compra</button>
                     </div>
                 </form>
 
-                
-            </div> 
+
+            </div>
         </>
 
     )
