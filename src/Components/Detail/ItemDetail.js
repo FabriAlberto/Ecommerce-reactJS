@@ -10,7 +10,6 @@ const ItemDetail = ({ Item }) => {
     const [cont, setCont] = useState(0);
     const [Buy, setBuy] = useState(false);
     const add = useContext(CartContext);
-
     const onAdd = () => {
         let res = "";
         if (cont > 1) { res = "productos" }
@@ -25,15 +24,24 @@ const ItemDetail = ({ Item }) => {
             :
             toast.error("Aun no ha agregado elementos a tu 🛒 ");
     }
-
-
     return (
         <>
             <div className='container d-flex align-content-center'>
-                <div className=' col-7' >
-                    <img src={img} style={{ width: '90%', height: '80vh', objectFit: 'cover' }} alt={name} />
+                <div className=' col-7 d-flex' >
+                    <div className='col-3'>
+                        <ul className='ul__sub__img'>
+                            <li className='container__sub__img'><img className='sub__img' src={img} alt="zapatillas-anuncio"></img></li>
+                            <li className='container__sub__img'><img className='sub__img' src={Item.imgSub?.img1} alt="zapatillas-anuncio"></img></li>
+                            <li className='container__sub__img'><img className='sub__img' src={Item.imgSub?.img2} alt="zapatillas-anuncio"></img></li>
+                            <li className='container__sub__img'><img className='sub__img' src={Item.imgSub?.img3} alt="zapatillas-anuncio"></img></li>
+                        </ul>
+                    </div>
+                    <div className='col-9 img__detail'>
+                        <img src={img} style={{ width: '90%', height: '80%', objectFit: 'contain' }} alt={name} />
+                    </div>
+
                 </div>
-                <div className=' col-5 d-flex  flex-column justify-content-center '>
+                <div className=' col-5 d-flex  flex-column  justify-content-center '>
                     <p>{name}</p>
                     <p>{description}</p>
                     <p>${price}</p>

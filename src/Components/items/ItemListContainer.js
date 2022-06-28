@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { firestoreFetch } from "../../mocks/FirebaseFetch";
+import Loading from "./Loading";
 const ItemListContainer = () => {
 
   const [listProds, setListProds] = useState([])
@@ -19,7 +20,7 @@ const ItemListContainer = () => {
   return (
     <>
       
-      {loading ? <h2 className="Loader text-primary">Cargando...</h2> : <ItemList cat={categoria} listProds={listProds} />}
+      {loading ? <Loading> </Loading> : <ItemList cat={categoria} listProds={listProds} />}
 
     </>
   );

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { CartContext } from './CartContext'
-import Order from './Order'
 import ProductData from './ProductData'
 
 const ProductsCart = ({ product }) => {
@@ -10,7 +9,7 @@ const ProductsCart = ({ product }) => {
   return (
     <>
       <div className='cart d-flex '>
-        <div className='d-flex' style={{ width: '70%', height:'0px' }}>
+        <div className='d-flex col-md-11' >
           <table className="table" style={{ width: '100%' }}>
             <thead >
               <tr>
@@ -31,11 +30,9 @@ const ProductsCart = ({ product }) => {
 
 
           </table>
-          <button className="continue__shoping all" onClick={cle.clear} style={{ height: '30px', }}>DELETE ALL</button>
+          <button className="continue__shoping all" onClick={cle.clear} style={{ height: '30px'}}>DELETE ALL</button>
         </div>
-  {      <div className='orderContainer'>
-        <Order style= {{width:'30%'}}> </Order>
-        </div>}
+ 
       </div>
     </>
   )

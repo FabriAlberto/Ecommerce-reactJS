@@ -1,13 +1,14 @@
-import React, { useContext, } from 'react'
+import React, { useContext, useState, } from 'react'
 import { CartContext } from './CartContext'
-import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
-import db from "../../mocks/FirebaseConfig"
+/* import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore"; */
+/* import db from "../../mocks/FirebaseConfig" */
 import { toast, Toaster } from 'react-hot-toast';
-const Order = () => {
 
+
+const Order = ({setComprar}) => {
     let tot = useContext(CartContext)
-
-    const generateOrder = () => {
+/* 
+    const generateOrder = async () => {
         let itemsCarOrder = tot.cartList.map(item => ({
             id: item.id,
             title: item.name,
@@ -18,15 +19,15 @@ const Order = () => {
 
         let order = {
             buyer: {
-                name: "Fabri alberto",
-                email: "fabri@gmail.com",
-                phone: "123456789"
+                name: tot.form.name,
+                email:tot.form.email,
+                phone: tot.form.cel
             },
             total: tot.calcTotal() - tot.calcDescuento(),
             items: itemsCarOrder,
             date: serverTimestamp()
         };
-        console.log(order)
+     
 
         const createOrderInFS = async () => {
             const newOrderRef = doc(collection(db, "orders"));
@@ -45,22 +46,17 @@ const Order = () => {
 
 
         setTimeout(() => {
-             /* function que ingresa al firestore y desincrementa el stock del producto comprado */
-            tot.cartList.forEach(async (element) => {
+           
+            tot.cartList.forEach(async(element) => {
                 const itemDB = doc(db, "products", element.id)
                 await updateDoc(itemDB, {
                     stock: increment(-element.cantidad)
                 });
             })
-           /*  borra el carrito  */
-            tot.clear()
+          
+           tot.clear()
         }, 3000)
-
-
-    }
-
-
-
+         */
 
     return (
         <>
@@ -69,7 +65,8 @@ const Order = () => {
                 <div className='d-flex  order__total'> <p> Sub total </p> <p> {tot.calcSubtotal()} </p></div>
                 <div className='d-flex order__total'> <p> descuento </p> <p> {tot.calcDescuento()}</p></div>
                 <div className='d-flex order__total'> <p> Total: </p> <p>{tot.calcTotal() - tot.calcDescuento()} </p></div>
-                <button onClick={() => generateOrder()} > CHECKOUT</button>
+                <button onClick={()=> setComprar(true)}> CHECKOUT</button>
+               
             </div>
             <Toaster toastOptions={{
                 style: {
@@ -82,7 +79,7 @@ const Order = () => {
                     secondary: '#fff',
                 },
             }} />
-
+      
         </>
     )
 }

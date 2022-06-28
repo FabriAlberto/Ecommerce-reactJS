@@ -6,7 +6,7 @@ const CartContextProvider = ({ children }) => {
 
 
    const [cartList, setCarList] = useState([]);
-
+ 
 
    /* const[order, setOrder]=useState([]); */
 
@@ -54,7 +54,7 @@ const CartContextProvider = ({ children }) => {
       setCarList([])
    }
    const calcDescuento = () => {
-      return calcTotal() * 0.10;
+      return Math.round(calcTotal() * 0.10);
    }
    const calcTotal = () => {
       let tot = cartList.map(item => item.price * item.cantidad)
@@ -82,12 +82,14 @@ const CartContextProvider = ({ children }) => {
       if (item.cantidad < stock)
          item.cantidad += 1
       console.log(item)
+      setCarList([...cartList])
    }
-   const decrement = (id, stock) => {
+   const decrement = (id) => {
       let item = cartList.find(elem => elem.id === id);
-      if (item.cantidad < stock)
+      if (item.cantidad>1)
          item.cantidad -= 1
       console.log(item)
+      setCarList([...cartList])
    }
    /* ⬆⬆⬆⬆ estas todavia no funcionan bien  ⬆⬆⬆⬆ */
 

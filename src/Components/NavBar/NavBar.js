@@ -8,7 +8,7 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid d-flex justify-content-around ">
-          <Link  style={{textDecoration:'none'}} to="/"><p className="navbar-brand" >sportCenter</p></Link>
+          <Link  style={{textDecoration:'none'}} to="/"> <div className='navbar__container'><div className='logo'><i class="bi bi-trophy-fill"></i></div> <p className="navbar-brand">sportCenter</p></div></Link>
       
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
