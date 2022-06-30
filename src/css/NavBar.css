@@ -4,7 +4,7 @@
 
 .bi-cart2{
     font-size: 1.5rem;
-    color: #377DD3;
+    color: var(--main-bg-color);
     border: none;
     background-color: transparent;
 }
@@ -14,7 +14,7 @@
 
 }
 .navbar-brand{
-    color: #377DD3;
+    color: var(--main-bg-color);
 }
 .navbar-collapse{
     flex-grow: 0;

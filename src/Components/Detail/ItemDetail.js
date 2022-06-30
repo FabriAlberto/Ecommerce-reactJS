@@ -6,7 +6,7 @@ import ItemGoToCart from './ItemGoToCart';
 import { Link } from 'react-router-dom';
 import { toast, Toaster } from 'react-hot-toast';
 const ItemDetail = ({ Item }) => {
-    const { img, name, description, price, stock } = Item
+    const { img, name, description, price, stock,category } = Item
     const [cont, setCont] = useState(0);
     const [Buy, setBuy] = useState(false);
     const add = useContext(CartContext);
@@ -42,6 +42,7 @@ const ItemDetail = ({ Item }) => {
 
                 </div>
                 <div className=' col-5 d-flex  flex-column  justify-content-center '>
+                    <p className='category'>{category?.toUpperCase()}</p>
                     <p>{name}</p>
                     <p>{description}</p>
                     <p>${price}</p>
