@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Item = ({ producto }) => {
-    const {price}=producto
-    const precio=new Intl.NumberFormat('es-AR', {/*  style: 'currency', currency: 'ARG' */ }).format(price)
+
+    const precio=new Intl.NumberFormat('es-AR', {/*  style: 'currency', currency: 'ARG' */ }).format(producto?.price)
     return (
         <>
 
