@@ -77,8 +77,8 @@ const ItemList = ({ listProds, cat }) => {
                     <h1 className='category__h1'>{cat.toUpperCase()}</h1>
                 </div>)}
             <div className=' container__orederby container d-flex justify-content-end  ' style={{ width: '100%', height: 'auto', marginTop: '20px' }}>
-
-
+              
+                 
                 <OrderBy setSelect={setSelect}></OrderBy>
             </div>
             <div className='d-flex flex-column align-items-center'>
