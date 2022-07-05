@@ -1,9 +1,14 @@
 :root {
     --main-bg-color:  #377DD3;
     --main-hover-color:  #2262af;
-  }
+  
+}
+
 *{
     font-family:'Montserrat', sans-serif ;
+}
+a{
+    text-decoration: none;
 }
 
  p{
@@ -42,6 +47,11 @@
  }
 
  /* ITEMS */
+/*  .imgs__slider{
+
+     height: 421px;
+     object-fit: cover;
+ } */
  .category__h1{
     font-weight: bolder;
     color: #fff;
@@ -53,7 +63,9 @@
  .select__order{
     border: 1px solid #e0e0e0;
     margin-left: 5px;
+    height: 25px;
  }
+
  .card{
      box-shadow: 0px 0px 3px #03030365;
  }
@@ -89,9 +101,7 @@
     justify-content: space-around;
     height: 100%;
   }
-  .container{
-    height: 80vh;
-  }
+ 
  .container__sub__img{
     list-style: none;
     height:90px;
@@ -127,6 +137,18 @@
     font-size: .6rem;
     margin-top: -5px;
  }
+ .contenedor__detail{
+
+    background-color: #c4c4c4;
+ }
+ .name__detail{
+     font-weight: bolder;
+
+ }
+.price__detail{
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
  /* ITEMS END */
  
 /* items car */
@@ -167,7 +189,9 @@
     font-size: 1.5rem;
     margin: 5px;
 }
-
+.btn__amount__car{
+    width: 120px !important;
+}
 .order{
     width: 100%;
     min-height:200px;
@@ -176,6 +200,7 @@
     text-align: center;
     border-radius: 5px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 .orderContainer{
     width: 40%;
@@ -188,6 +213,10 @@
     justify-content: space-between;
     padding: 8px;
 }
+.container__orderby{
+    width: 100%;
+}
+
 /* form */
 label{
     color: var(--main-bg-color);
@@ -241,7 +270,7 @@ label{
    border: 2px solid var(--main-hover-color);
 }
 .category{
-    color: #c4c4c4;
+    color: #ffff;
     font-weight: bolder;
     font-size: .8rem;
 
@@ -265,6 +294,37 @@ label{
 .container__order{
     min-height: 200px;
 }
-.container__products__car{
-    min-height: 80vh;
+
+.container__itemDetail{
+     min-height:80vh ;
+}
+
+
+
+
+/* media querys */
+@media only screen and ( max-width: 700px) {
+    .select__order{
+       width: 100%;
+       margin-left: 0px;
+       background-color: #000;
+       border: none;
+       color: #fff;
+       outline: none;
+       
+    }
+    .imgs__slider{
+        height: 200px;
+        object-fit: cover;
+    }
+    .fieldset__container{
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        height: 80px;
+        
+     }
+    .orderby{
+        width: 100%;
+    }
 }

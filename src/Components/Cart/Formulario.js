@@ -104,7 +104,7 @@ const Formulario = ({ setComprar }) => {
 
                     <div className=' container  d-flex flex-column align-items-center justify-content-center  '>
                           <div>
-                            <h3>ESTAS A UN PASO DE TERMINAR TU COMPRA 🥳</h3>
+                            <h3>YOU ARE ONE STEP AWAY FROM COMPLETING YOUR PURCHASE 🥳</h3>
                           </div>
                         <Form className=" forms rounded col-12 col-md-8 d-flex flex-column 
                          justify-content-center align-items-center " >

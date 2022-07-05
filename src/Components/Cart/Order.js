@@ -13,8 +13,8 @@ const Order = ({setComprar}) => {
         <>
             <div className='order bg-dark text-light'>
                 <h2> ORDER </h2>
-                <div className='d-flex  order__total'> <p> Sub total </p> <p> ${tot.calcSubtotal()} </p></div>
-                <div className='d-flex order__total'> <p> Descuento </p> <p> -${tot.calcDescuento()}</p></div>
+                <div className='d-flex  order__total'> <p> Subtotal </p> <p> ${tot.calcSubtotal()} </p></div>
+                <div className='d-flex order__total'> <p> Discount </p> <p> -${tot.calcDescuento()}</p></div>
                 <div className='d-flex order__total'> <p> Total: </p> <p>${tot.calcTotal() - tot.calcDescuento()} </p></div>
                 <button className='checkout__order ' onClick={()=> setComprar(true)}> CHECKOUT</button>
                

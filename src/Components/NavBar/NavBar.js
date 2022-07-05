@@ -16,16 +16,16 @@ const NavBar = () => {
           <div className=" collapse navbar-collapse  " id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-              <Link  style={{textDecoration:'none'}} to={"/category/zapatillas"} ><p className="nav-link active" aria-current="page" >Zapatillas</p></Link>
+              <Link  style={{textDecoration:'none'}} to={"/category/zapatillas"} ><p className="nav-link active" aria-current="page" >Sneakers</p></Link>
               </li>
               <li className="nav-item">
-              <Link  style={{textDecoration:'none'}}to={"/category/remeras"}> <p className="nav-link" >Remeras</p></Link>
+              <Link  style={{textDecoration:'none'}}to={"/category/remeras"}> <p className="nav-link" >T-shirt</p></Link>
               </li>
               <li className="nav-item">
-              <Link style={{textDecoration:'none'}} to={"/category/buzos"}> <p className="nav-link" >Buzos</p></Link>
+              <Link style={{textDecoration:'none'}} to={"/category/buzos"}> <p className="nav-link" >Hoodies</p></Link>
               </li>
               <li className="nav-item">
-              <Link  style={{textDecoration:'none'}}to={"/category/pantalones"}> <p className="nav-link " >Pantalones</p></Link>
+              <Link  style={{textDecoration:'none'}}to={"/category/pantalones"}> <p className="nav-link " >Pants</p></Link>
               </li>
             </ul>
             

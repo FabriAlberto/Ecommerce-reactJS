@@ -26,7 +26,7 @@ const ItemDetail = ({ Item }) => {
     }
     return (
         <>
-            <div className='container d-flex align-content-center'>
+            <div className='container container__itemDetail d-flex '>
                 <div className=' col-7 d-flex' >
                     <div className='col-3'>
                         <ul className='ul__sub__img'>
@@ -41,11 +41,16 @@ const ItemDetail = ({ Item }) => {
                     </div>
 
                 </div>
-                <div className=' col-5 d-flex  flex-column  justify-content-center '>
+                <div className='contenedor__detail col-5 d-flex  flex-column my-3 justify-content-center p-3 rounded'>
                     <p className='category'>{category?.toUpperCase()}</p>
-                    <p>{name}</p>
-                    <p>{description}</p>
-                    <p>${price}</p>
+                    <div className='my-3'>
+                    <p className='name__detail'>{name}</p>
+                    <p className=''>{description?.toLowerCase()}</p>
+                    </div>
+                    <div>
+                    <p> Stock: {stock} Unidades</p>
+                    <p className='price__detail'>${price}</p>
+                    </div>
                     {
                         Buy === false ? <ItemCount stock={stock} Item={Item} onAdd={onAdd} cont={cont} setCont={setCont} />
                             : <Link to={"/cart"}> <ItemGoToCart /></Link>
@@ -62,9 +67,6 @@ const ItemDetail = ({ Item }) => {
                         },
                     }} />
                 </div>
-            </div>
-            <div>
-                <p> pares disponibles: {stock}</p>
             </div>
         </>
     )

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className=" footer navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-md d-flex  col-7 justify-content-end">
                     <Link style={{ textDecoration: 'none' }} to="/">
                         <div className='navbar__container'>

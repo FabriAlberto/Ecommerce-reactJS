@@ -73,10 +73,10 @@ const ItemList = ({ listProds, cat }) => {
 
             {cat === undefined ? <Slider></Slider>
                 :
-                (<div className='col-12 d-flex my-4 ms-5'>
+                (<div className='col-12 d-flex my-4 p-2'>
                     <h1 className='category__h1'>{cat.toUpperCase()}</h1>
                 </div>)}
-            <div className=' container d-flex justify-content-end  ' style={{ width: '100%', height: 'auto', marginTop: '20px' }}>
+            <div className=' container__orederby container d-flex justify-content-end  ' style={{ width: '100%', height: 'auto', marginTop: '20px' }}>
 
 
                 <OrderBy setSelect={setSelect}></OrderBy>

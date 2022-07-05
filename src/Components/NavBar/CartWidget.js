@@ -8,7 +8,7 @@ const CartWidget = () => {
     <>
       <button className=" carrito bi bi-cart2  position-relative">
          
-          { test.calcItemsQty()>0? <Badge cont={test.calcItemsQty()}></Badge>:console.log("nada")}
+          { test.calcItemsQty()>0 && <Badge cont={test.calcItemsQty()}></Badge>}
       
       </button>
     </>
