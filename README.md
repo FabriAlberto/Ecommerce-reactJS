@@ -1,3 +1,40 @@
+
+# SportCenter 👟
+
+Este es un proyecto realizado para el curso de Front-end de
+CoderHouse. 
+En esta ocacion realice un e-commerce ,con React js, de indumentaria
+deportiva (sneakers,hoddies,pants,etc.).
+
+# Construido con 🛠️
+#### Lenguaje 📚
+*[Javascript](https://www.javascript.com/)
+#### Frameworks and librarys 📚
+* [React Js](https://es.reactjs.org/) - Para el desarrollo en gral de la app.
+* [Bootstrap](https://getbootstrap.com/) - Manejo de estilos, maquetacion ,iconos y componentes css.
+* [React-host-toast](https://react-hot-toast.com/)-Para manejo de avisos de warnings.
+* [Formik](https://formik.org/) - Manejo de formulario, errores, validacion de datos.
+* [React Router](https://reactrouter.com/)- Manejo de rutas, y redireccionamientos.
+* [React Context](https://es.reactjs.org/docs/context.html)- Para manejo de variables y funciones globales.
+* [Firebase-(Firestore)](https://firebase.google.com/)- Para manejar nuestra DB de productos y pedidos realizadas.
+
+# Deployment 💻
+Deployado en [VERCEL](https://vercel.com)\
+Acceso al sitio web [SportCenter](https://sportcenters.vercel.app/) 👈
+# Autor 🧑
+[Fabricio Hugo Alberto](https://github.com/FabriAlberto) - [Linkedin](https://www.linkedin.com/in/fabricio-alberto-597b17220/)
+# Recomendaciones 👨‍🏫
+
+* Comentame sobre mejoras para mi proyecto.
+* Aspectos a mejorar
+* Detalles que hayas visto en mi codigo.
+* etc.
+
+# Contacto 📲
+* [Linkedin](https://www.linkedin.com/in/fabricio-alberto-597b17220/)
+* [github](https://github.com/FabriAlberto)
+* Email :fabriciohugoalberto16@gmail.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -14,10 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -39,32 +73,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

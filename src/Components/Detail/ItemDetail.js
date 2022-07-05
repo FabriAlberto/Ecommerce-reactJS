@@ -10,6 +10,7 @@ const ItemDetail = ({ Item }) => {
     const [cont, setCont] = useState(0);
     const [Buy, setBuy] = useState(false);
     const add = useContext(CartContext);
+    const precio=new Intl.NumberFormat('es-AR', { /* style: 'currency', currency: 'ARG' */ }).format(price)
     const onAdd = () => {
         let res = "";
         if (cont > 1) { res = "productos" }
@@ -49,7 +50,7 @@ const ItemDetail = ({ Item }) => {
                     </div>
                     <div>
                     <p> Stock: {stock} Unidades</p>
-                    <p className='price__detail'>${price}</p>
+                    <p className='price__detail'>${precio}</p>
                     </div>
                     {
                         Buy === false ? <ItemCount stock={stock} Item={Item} onAdd={onAdd} cont={cont} setCont={setCont} />
