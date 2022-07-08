@@ -20,7 +20,7 @@ deportiva (sneakers,hoddies,pants,etc.).
 
 # Deployment 💻
 Deployado en [VERCEL](https://vercel.com)\
-Acceso al sitio web [SportCenter](https://sportcenters.vercel.app/) 👈
+Acceso al sitio web [SportCenter](https://sportcenter.vercel.app/) 👈
 # Autor 🧑
 [Fabricio Hugo Alberto](https://github.com/FabriAlberto) - [Linkedin](https://www.linkedin.com/in/fabricio-alberto-597b17220/)
 # Recomendaciones 👨‍🏫
